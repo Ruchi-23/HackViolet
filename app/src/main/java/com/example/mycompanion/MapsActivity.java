@@ -46,6 +46,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, PackageManager.PERMISSION_GRANTED);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS}, PackageManager.PERMISSION_GRANTED);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.INTERNET}, PackageManager.PERMISSION_GRANTED);
+        Toast.makeText(getApplicationContext(),
+                "Message sent successfully!",
+                Toast.LENGTH_LONG);
+
 
 
     }
@@ -82,6 +86,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     StringBuffer smsBody = new StringBuffer();
 
                     smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+                    Toast.makeText(getApplicationContext(),
+                            "Message sent successfully!",
+                            Toast.LENGTH_LONG);
 
                 }
                 catch (Exception e)
